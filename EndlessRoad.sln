@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndlessRoad.Plugins", "EndlessRoad.Plugins.csproj", "{4014E834-5236-4D57-33CE-320CAC16A676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndlessRoad", "EndlessRoad.csproj", "{5437CC5C-092F-C701-9630-728D3BD83E60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4014E834-5236-4D57-33CE-320CAC16A676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4014E834-5236-4D57-33CE-320CAC16A676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4014E834-5236-4D57-33CE-320CAC16A676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4014E834-5236-4D57-33CE-320CAC16A676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5437CC5C-092F-C701-9630-728D3BD83E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5437CC5C-092F-C701-9630-728D3BD83E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5437CC5C-092F-C701-9630-728D3BD83E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5437CC5C-092F-C701-9630-728D3BD83E60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
