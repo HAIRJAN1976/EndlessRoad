@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/ProtoType.unity
+- path: C:/Users/wangil_park/Downloads/AStar-master/Assets/Scenes/Astar.unity
   isLoaded: 1
   isActive: 1

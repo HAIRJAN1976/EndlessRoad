@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -68,15 +66,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Debug\DebugBox.cs" />
+    <Compile Include="Assets\Plugins\AStar\AStar.cs" />
+    <Compile Include="Assets\Plugins\AStar\Configuration.cs" />
+    <Compile Include="Assets\Plugins\AStar\Field.cs" />
     <Compile Include="Assets\Plugins\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Plugins\DOTween\Examples\Sequences.cs" />
+    <Compile Include="Assets\Plugins\Debug\DebugBox.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\BreadCrumb.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\MinHeap.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\PathFinder.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\Point3D.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\Program.cs" />
+    <Compile Include="Assets\Plugins\PathFinder\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\Plugins\DOTween\readme.txt" />
     <None Include="Assets\Resources\Shader\Ghost.shader" />
+    <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

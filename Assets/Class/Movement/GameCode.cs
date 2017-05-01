@@ -9,11 +9,13 @@ public class GameCode
     {
         Passable = 0,
         UnPassable = 1,
+        StartPoint = 2,
+        EndPoint = 3,
     }
 
     public static string GetTag(int index)
     {
-        string[] tag = { "Passable", "UnPassable" };
+        string[] tag = { "Passable", "UnPassable", "StartPoint", "EndPoint" };
         return tag[index];
     }
     
