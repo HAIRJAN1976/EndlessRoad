@@ -51,10 +51,7 @@ public class PathAI : MonoBehaviour
                     line.SetPosition(1, new Vector3(roots[i + 1].cordinate.y * 3 - 1.5f, 4, roots[i + 1].cordinate.x * 3 - 1.5f));
                     line.SetWidth(0.1f, 0.1f);
                 }
-
             }
-
-
         }
         if (Input.GetKeyDown("r"))
         {
@@ -102,7 +99,6 @@ public class PathAI : MonoBehaviour
                 {
                     newNode.GetComponent<Node>().SetDefault();
                 }
-
 
                 newNode.GetComponent<Node>().cordinate = new Vector2(i, j);
 
