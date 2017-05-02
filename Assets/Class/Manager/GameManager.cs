@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +13,15 @@ public class GameManager : MonoBehaviour
     private int stageXCord = 10;
     private int stageYCord = 10;
 
-    private Vector3 positionStart;
-    private Vector3 positionEnd;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
+
+    private Vector2 startCordinate;
+    private Vector2 endCordinate;
+
+    private List<Node> matrix;
 
     private GameObject character;
-
-    private AStar astar;
 
     // Use this for initialization
     void Start()
@@ -32,11 +37,13 @@ public class GameManager : MonoBehaviour
                             {"1:70:1","1:0:0","3:0:0","3:0:0","3:0:0","3:0:0","3:0:0","3:0:0","3:0:0","1:70:1"},
                             {"1:61:1","1:62:1","1:63:1","1:64:1","1:65:1","1:66:1","1:67:1","1:68:1","1:69:1","1:70:1"}};
 
-        astar = this.GetComponent<AStar>();
-        astar.Initialize(stageXCord, positionEnd);
+        matrix = new List<Node>();
+        boardBase = new GameObject[stageXCord, stageYCord];
 
         stage01 = temp;
+
         CreateBoard();
+
         CreateCharacter();
 
         this.GetComponent<TargetFollowMovement>().sourceTransform = character.transform;
@@ -61,12 +68,14 @@ public class GameManager : MonoBehaviour
                     character = (GameObject)Instantiate(model, new Vector3(x * 3, 2, y * 3 - 1.5f), Quaternion.identity, transform);
                     character.name = "Character";
 
-                    positionStart = new Vector3(x * 3, 2, y * 3 - 1.5f);
+                    startPosition = new Vector3(x * 3, 2, y * 3 - 1.5f);
+                    startCordinate = new Vector2(x, y);
                 }
 
                 if (int.Parse(stage01[x, y].Split(':')[2]) == 3)
                 {
-                    positionEnd = new Vector3(x * 3, 2, y * 3 - 1.5f);
+                    endPosition = new Vector3(x * 3, 2, y * 3 - 1.5f);
+                    endCordinate = new Vector2(x, y);
                 }
             }
         }
@@ -74,26 +83,26 @@ public class GameManager : MonoBehaviour
 
     private void CreateBoard()
     {
-        boardBase = new GameObject[10, 10];
-
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < stageXCord; x++)
         {
-            for (int y = 0; y < 10; y++)
+            for (int y = 0; y < stageYCord; y++)
             {
                 boardBase[x, y] = BlockManager.GetBlock(board, x, y, stage01[x, y]);
 
-                if(boardBase[x, y].transform.tag == GameCode.Tag.UnPassable.ToString())
+                if (boardBase[x, y].tag == "UnPassable")
                 {
-                    astar.nodes[x, y] = new Node(new Vector2(x, y), true);
+                    //matrix.Add(new Node(x, y, false));
                 }
                 else
                 {
-                    astar.nodes[x, y] = new Node(new Vector2(x, y));
+                    //matrix.Add(new Node(x, y));
                 }
-                //astar.nodes[x, y] = new Node(new Vector2(x, y));
-                astar.openNodes[x, y] = new Node(new Vector2(x, y));
-                astar.closedNodes[x, y] = new Node(new Vector2(x, y));
             }
+        }
+
+        foreach (Node node in matrix)
+        {
+            node.SetNeigbours(matrix, 0.3f);
         }
     }
 }

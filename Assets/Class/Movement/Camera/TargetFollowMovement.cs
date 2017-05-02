@@ -4,7 +4,9 @@ using DG.Tweening;
 
 public class TargetFollowMovement : MonoBehaviour
 {
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public Camera camera;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
     public Transform sourceTransform;
     public Transform targetTransform;
 

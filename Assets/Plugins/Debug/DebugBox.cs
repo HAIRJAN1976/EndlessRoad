@@ -47,7 +47,7 @@ public class DebugBox : MonoBehaviour
             switch (type)
             {
                 case LogType.Error:
-                    printList.Add(new PrintInfo(condition, type,  true));
+                    printList.Add(new PrintInfo(condition, type, true));
                     break;
                 case LogType.Assert:
                     break;
